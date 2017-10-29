@@ -26,7 +26,7 @@
       varArea();
       echo "================================GLOBALS[]============================";
       /*
-        全局变量存储在一个名为GLOBALS的数组中，可以通过变量名直接访问以及修改变量
+        全局变量存储在一个名为GLOBALS的数组中（该数组是一个超全局变量，不需要使用global），可以通过变量名直接访问以及修改变量
        */
       function changeGlobalValue(){
         $GLOBALS['globalVar']="I am a global Var,but I am changed!";
