@@ -14,6 +14,10 @@
       //用于检索字符串内指定的字符或文本:strpos(var,find)
       $position = strpos($text,"am");
       echo "位置：$position<br />";
+      //拼接：“.”
+      $originText = "origin ";
+      $originText = $originText."not origin";
+      echo $originText;
     ?>
   </body>
 </html>
