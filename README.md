@@ -3,6 +3,7 @@ PHP入门练习
 
 mysql用户名：root
 终端修改密码：SET PASSWORD FOR 'root'@'localhost' = PASSWORD('newpass');
+mysql函数命令参考地址：http://php.net/manual/zh/ref.mysql.php
 
 PHP 脚本可以放在文档中的任何位置。
 PHP 脚本以 <?php 开始，以 ?> 结束
