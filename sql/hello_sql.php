@@ -10,7 +10,7 @@
        * mysqli_connect(servername,username,password)用来连接数据库
        * mysqli_close()用来关闭数据库
        */
-       $sql = mysqli_connect("127.0.0.1","root","wohengaoxing888");
+       $sql = mysqli_connect("127.0.0.1","root","my_db");
        if (!$sql) {
          echo "open failed";
        }else{
