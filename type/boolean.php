@@ -33,4 +33,9 @@
   }else{
     echo "空数组为true<br />";
   }
+  if (NAN) {
+    echo "NAN是True<br />";   //true
+  }else{
+    echo "NAN是false<br />";
+  }
  ?>
