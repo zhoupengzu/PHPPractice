@@ -38,4 +38,7 @@
   }else{
     echo "NAN是false<br />";
   }
+  
+  $hah = 2 / 0;
+  echo $hah; //INF
  ?>
