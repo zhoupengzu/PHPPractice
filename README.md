@@ -44,3 +44,21 @@ integer范围大小和运行平台有关，但是在Windows上永远为32位
 PHP_INT_SIZE确定范围、PHP_INT_MIN获取最小值（PHP7.0.0新增）、PHP_INT_MAX获取最大值(PHP5.0.5新增)
 2)NaN and Infinity会被强制转换为0
 3)当没有强制转换的时候，如果值超出了范围，则该类型会自动转为浮点数
+
+3、string
+定义string有四种方式：单引号、双引号、heredoc syntax、nowdoc syntax
+1)单引号和双引号
+最大的区别在于单引号里的引用变量不会被执行，而双引号中的引用变量会被替换执行
+2）heredoc syntax
+
+$str = <<<"EOD"   *****这里的双引号本来不添加，但是从PHP5.3开始可以选择是否添加
+  Example of string
+  spanning multiple lines
+  using heredoc syntax.
+EOD;  *******这里有两个要求：不能有缩紧；必须有分号（；）；后面不能有空格等其他的东西
+规则：以相同的identifier（这里是EOD）开始并结束；
+     只能是字母数字和下划线；
+     只能以字母和下划线开头
+3）newdoc syntax
+具体用法和heredoc相同，定义形式上不同的地方在于：$str = <<<‘EOD’这里需要单引号
+在使用上，newdoc syntax不会执行其中包含的变量
