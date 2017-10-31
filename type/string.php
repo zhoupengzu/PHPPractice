@@ -23,5 +23,6 @@ echo '<br />';
     spanning multiple lines
     using nowdoc syntax.
 EOD;
-  echo $str;
+  echo $str,"<br />";
+
  ?>
