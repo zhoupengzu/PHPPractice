@@ -74,3 +74,90 @@ bool类型的会转为integer；NULL会被转为空字符串；
 1）unset（不会重置索引index，如果想重置索引，使用array_values（））
 unset($arr[5]) 删除数组的下标为5的元素
 unset($arr) 删除数组中的所有元素
+
+5、类class和对象object
+class foo
+{
+    function do_foo()
+    {
+        echo "Doing foo.";
+    }
+}
+
+1）初始化,使用new初始化
+$foo = new foo();
+或者：$foo_str = "foo";$foo = new $foo_str();  
+****如果该类属于一个名字空间，则不能用字符串方式初始化
+2）不支持多继承，父类用final修饰的不能再被重写；子类重写的方法中，可以通过parent::方法名调用父类相同的方法
+3）使用 ClassName::class 你可以获取一个字符串，包含了类 ClassName 的完全限定名称。这对使用了 命名空间 的类尤其有用
+
+6、命名空间(关键词：namespace,必须在其它所有代码之前声明命名空间，除了一个以外：declare关键字)
+1)解决的问题
+用来解决在编写类库或应用程序时创建可重用的代码如类或函数时碰到的两类问题：
+  1、用户编写的代码与PHP内部的类/函数/常量或第三方类/函数/常量之间的名字冲突。
+  2、为很长的标识符名称(通常是为了缓解第一类问题而定义的)创建一个别名（或简短）的名称，提高源代码的可读性。
+2）定义命名空间
+类（包括抽象类和traits）、接口、函数和常量会受命名空间的影响
+** 同一个命名空间可以定义在多个文件中，即允许将同一个命名空间的内容分割存放在不同的文件中
+
+<html>
+<?php
+namespace MyProject; // 致命错误 -　命名空间必须是程序脚本的第一条语句
+?>
+
+3)在同一个文件中定义多个命名空间
+a、简单组合语法（不推荐）
+<?php
+  namespace MyProject;
+
+  const CONNECT_OK = 1;
+  class Connection { /* ... */ }
+  function connect() { /* ... */  }
+
+  namespace AnotherProject;
+
+  const CONNECT_OK = 1;
+  class Connection { /* ... */ }
+  function connect() { /* ... */  }
+?>
+
+b、大括号语法
+<?php
+  namespace MyProject{
+
+  const CONNECT_OK = 1;
+  class Connection { /* ... */ }
+  function connect() { /* ... */  }
+}
+
+  namespace AnotherProject{
+
+  const CONNECT_OK = 1;
+  class Connection { /* ... */ }
+  function connect() { /* ... */  }
+}
+?>
+
+4)全局命名空间，全局代码必须用一个不带名称的 namespace 语句加上大括号括起来
+<?php
+  declare(encoding='UTF-8');
+  namespace MyProject {
+
+  const CONNECT_OK = 1;
+  class Connection { /* ... */ }
+  function connect() { /* ... */  }
+  }
+
+  namespace { // 全局代码
+  session_start();
+  $a = MyProject\connect();
+  echo MyProject\Connection::start();
+  }
+?>
+
+5）使用命名空间（基础）
+有三种方式：
+a、非限定名称
+b、限定名称
+c、完全限定名称（以\开头）
+对于函数和常量来说，如果当前命名空间中不存在该函数或常量，PHP 会退而使用全局空间中的函数或常量
