@@ -36,3 +36,11 @@ apache配置文件路径：/etc/apache2/httpd.conf
 3）空字符串和字符串0
 4)空数组(这个有问题)
 5）NULL、没有初始化的
+
+2、integer
+八进制以0（零）开头、十六进制以0x开头，二进制（PHP5.4新增）以0b开头
+integer范围大小和运行平台有关，但是在Windows上永远为32位
+1）常量
+PHP_INT_SIZE确定范围、PHP_INT_MIN获取最小值（PHP7.0.0新增）、PHP_INT_MAX获取最大值(PHP5.0.5新增)
+2)NaN and Infinity会被强制转换为0
+3)当没有强制转换的时候，如果值超出了范围，则该类型会自动转为浮点数
