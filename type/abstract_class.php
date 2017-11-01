@@ -3,7 +3,7 @@
   abstract class AbstractClass{
     // abstract public $abstract_var = ";";  //抽象方法中不能定义属性
     abstract function abstractFunc();
-    abstract protected function protectedAbstractFunc();
+    abstract protected function protectedAbstractFunc();  //这里的访问权限不能是private
     abstract function confuseFunc($name);
     function notAbstractFunction(){    //抽象类中可以定义非抽象方法
       echo "我不是抽象方法";

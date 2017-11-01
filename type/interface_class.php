@@ -16,6 +16,7 @@
     const INTERFACE_VAR = "接口中的常量";
     public function getHtml();
     public function printMyInfo();
+    // protected function protectedFunc();
   }
   class MyClass implements iTemplate{
     public function getHtml(){
@@ -24,5 +25,8 @@
     function printMyInfo(){
 
     }
+    // protected function protectedFunc(){
+    //
+    // }
   }
  ?>

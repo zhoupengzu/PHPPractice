@@ -4,8 +4,8 @@
    * 优先级：当前类的成员方法覆盖trait中的相同方法，trait会覆盖被继承的方法
    */
   trait TraitBaseClass{
-    // $trait_var = "trait中不能定义变量";
-    // const TRAIT_CONSTANT = "trait不能定义常量";
+    private  $trait_var = "trait中能定义变量，但是需要显示的标记为public、protected、private";
+    // public const TRAIT_CONSTANT = "trait不能定义常量";
     function printInfo(){
       echo __METHOD__,"方法必须实现";
     }
